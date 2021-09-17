@@ -18,11 +18,9 @@ class App {
         this.app.use(morgan('dev'));
 
         this.app.use((req, res, next) => {
-            res.header("Access-Controll-Allow-Origin", "*");
-            res.header("Access-Controll-Allow-Methods", "Get, POST, PUT, DELETE");
-            res.header("Access-Controll-Allow-Headers", "Access, Content-type, Authorization, Acept, Origin, X-Requested-With");
-
-
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+            res.header("Access-Control-Allow-Headers", "x-access-token, Origin, X-Requested-With, Content-Type, Accept");
             this.app.use(cors());
             next();
         })

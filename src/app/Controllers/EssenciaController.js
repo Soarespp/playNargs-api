@@ -3,8 +3,8 @@ const Essencia = require('../Models/Essencia');
 
 class EssenciaController {
     async get(req, res) {
-        const essenciaFind = await Essencia.find();
-        return res.status(200).json({ essenciaFind })
+        const essencias = await Essencia.find();
+        return res.status(200).json({ essencias })
     }
 
     async update(req, res) {
