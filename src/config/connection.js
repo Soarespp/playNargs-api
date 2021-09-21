@@ -10,7 +10,7 @@ class Connection {
     }
 
     dataBaseConnectionMongoDB() {
-        this.mongoDBConnection = mongoose.connect(URL_LOCAL) //cria essa database automatico
+        this.mongoDBConnection = mongoose.connect(URL_ATLAS2) //cria essa database automatico
             .then(() => {
                 console.log("Conexão estabelicida com o MongoDB");
             })
