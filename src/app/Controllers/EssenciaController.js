@@ -7,6 +7,11 @@ class EssenciaController {
         return res.status(200).json({ essencias })
     }
 
+    async getId(req, res) {
+        const essencias = await Essencia.findOne({ idx: req.params.id });
+        return res.status(200).json(essencias)
+    }
+
     async update(req, res) {
         let essenciaExists = await Essencia.findOneAndReplace({ idx: req.body.idx }, { ...req.body }, { rawResult: true })
 
@@ -50,7 +55,7 @@ class EssenciaController {
     }
 
     async store(req, res) {
-        let essenciaExists = await Essencia.findOne({ name: req.body.name });
+        let essenciaExists = await Essencia.findOne({ idx: req.body.idx });
 
         if (essenciaExists) {
             return res.status(400).json({

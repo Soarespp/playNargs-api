@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { array, string } = require('yup/lib/locale');
 
 const Essencia = mongoose.Schema(
     {
@@ -43,6 +42,11 @@ const Essencia = mongoose.Schema(
             type: Array,
             require: false,
             'default': []
+        },
+        urlImg: {
+            type: Object,
+            require: false,
+            'default': {}
         }
     },
     {
