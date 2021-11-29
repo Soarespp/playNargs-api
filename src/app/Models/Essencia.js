@@ -18,6 +18,10 @@ const Essencia = mongoose.Schema(
             type: Number,
             require: true,
         },
+        nota: {
+            type: Number,
+            require: false,
+        },
         dislike: {
             type: Number,
             require: true,
